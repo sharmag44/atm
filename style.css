@@ -9,8 +9,10 @@
 }
 .btn{
   padding: 5px;
-  margin: 0 auto;
+  position: relative;
+  top:30px;
+  left:150px;
 }
 .form-control{
-  width: 50%;
+  width:500px !important;
 }
