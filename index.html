@@ -9,24 +9,24 @@
     <title>ATM </title>
 </head>
 <body>
-    <form name="reg" method="POST">
+    <form>
         <div class="form-group">
             <label for="user" class="form-label">User :</label>
-            <input type="text"  class="form-control" placeholder="User Name" id="user" required maxlength="12">
+            <input type="text"  class="form-control" placeholder="User Name" id="user" required/>
         </div>
         <div class="form-group">
             <label for="Password" class="form-label">Password :</label>
-            <input type="password" class="form-control" placeholder="Password" id="password" required maxlength="12">
+            <input type="password" class="form-control" placeholder="Password" id="password" required/>
         </div>
         <div class="form-group">
             <label for="Account" class="form-label">Account No :</label>
-            <input type="number" id="account" class="form-control" placeholder="Account No" id="account" required maxlength="12">   
+            <input type="number" id="account" class="form-control" placeholder="Account No" id="account" required/>   
         </div>
         <div class="form-group">
             <label for="" class="form-label">Add Money :</label>
-            <input type="number" id="money" class="form-control" placeholder="Add Money" id="money" required maxlength="12">   
+            <input type="number" id="money" class="form-control" placeholder="Add Money" id="money" required/>   
         </div>
-            <a href="./Login.html" type="submit" id="btn" class="btn btn-primary">Registered</a>   
+            <a href="./Login.html" type="submit" id="btn"  onclick="register()" class="btn btn-primary">Registered</a>   
         </div>
     </form>
     <script src="./script.js"></script>
