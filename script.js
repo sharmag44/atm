@@ -16,37 +16,57 @@ function register() {
 function getData() {
   var myarr = localStorage.getItem("myarr");
   var newArr = JSON.parse(myarr);
-  if ((document.getElementById("user")!= null)&&(document.getElementById("pass")!= null)) {
+  if (
+    document.getElementById("user") != null &&
+    document.getElementById("pass") != null
+  ) {
     var login = document.getElementById("user").value;
     var pass = document.getElementById("pass").value;
-      for(let i=0;i<newArr.length;i++){
-        if((newArr[i][0]===login)&&(newArr[i][1]===pass)){
-          alert("Matched")
-        }
-        else{
-          alert("Not Matched")
-        }
+    for (let i = 0; i < newArr.length; i++) {
+      if (newArr[i][0] === login && newArr[i][1] === pass) {
+        alert("Matched");
+      } else {
+        alert("Not Matched");
       }
-}
+    }
+  }
 }
 
 function withdraw() {
-  if (newArr[i][3] !== 0) {
-    let withdrawAmount = parseInt(
-      document.getElementById("Withdraw-money").value
-    );
-   newArr[i][3] = newArr[i][3] - withdrawAmount;
-    alert(newArr[i][3]);
+  var myarr = localStorage.getItem("myarr");
+  var newArr = JSON.parse(myarr);
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i][3] !== 0) {
+      let withdrawAmount = parseInt(
+        document.getElementById("Withdraw-money").value
+      );
+      alert(newArr[i][3]);
+      var value = newArr[i][3] - withdrawAmount;
+      alert(newArr[i][3]);
+      newArr[i][3].pop();
+      newArr[i][3].push(value);
+      localStorage.setItem("arr", JSON.stringify(newArr));
+    }
   }
 }
 function deposit() {
-  let depositAmount = parseInt(document.getElementById("deposit").value);
-  newArr[i][3] + depositAmount;
-  window.location.href("./dashboard.html");
+  var myarr = localStorage.getItem("myarr");
+  var newArr = JSON.parse(myarr);
+  for (let i = 0; i < newArr.length; i++) {
+    let depositAmount = parseInt(document.getElementById("deposit").value);
+    var value = newArr[i][3] + depositAmount;
+    alert(value);
+    newArr[i][3].pop();
+    newArr[i][3].push(value);
+    localStorage.setItem("arr", JSON.stringify(newArr));
+  }
 }
 function check() {
-  alert(newArr[i][3]);
-  window.location.href("./dashboard.html");
+  var myarr = localStorage.getItem("myarr");
+  var newArr = JSON.parse(myarr);
+  for (let i = 0; i < newArr.length; i++) {
+    alert("Balance is : " + newArr[i][3]);
+  }
 }
 // function updateData(){
 
