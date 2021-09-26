@@ -6,10 +6,20 @@ function register() {
   let password = document.getElementById("password").value;
   let account = parseInt(document.getElementById("account").value);
   let money = parseInt(document.getElementById("money").value);
-  var data = [user, password, account, money];
+  if (user !== null && password && null && account !== null && cemail !== null && money !== null) {      
+
+var data = [user, password, account, money];
   arr[index] = data;
   index++;
   localStorage.setItem("myarr", JSON.stringify(arr));
+     
+
+}   
+else{
+	alert("fill all inputs");
+    window.location.reload();
+}
+  
 }
 
 //login data
