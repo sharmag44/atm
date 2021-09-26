@@ -24,9 +24,9 @@ function getData() {
     var pass = document.getElementById("pass").value;
     for (let i = 0; i < newArr.length; i++) {
       if (newArr[i][0] === login && newArr[i][1] === pass) {
-        alert("Matched");
+        alert("Password Matched");
       } else {
-        alert("Not Matched");
+        alert("Password didn't Matched");
       }
     }
   }
@@ -40,32 +40,33 @@ function withdraw() {
       let withdrawAmount = parseInt(
         document.getElementById("Withdraw-money").value
       );
-      alert(newArr[i][3]);
       var value = newArr[i][3] - withdrawAmount;
-      alert(newArr[i][3]);
-      newArr[i][3].pop();
-      newArr[i][3].push(value);
+      alert("your current balance is :" + value);
+      newArr[i][3] = value;
       localStorage.setItem("arr", JSON.stringify(newArr));
+      var myarr = localStorage.getItem("arr");
+      var arr = JSON.parse(myarr);
     }
   }
 }
 function deposit() {
   var myarr = localStorage.getItem("myarr");
   var newArr = JSON.parse(myarr);
+  var deposit = parseInt(document.getElementById("deposit").value);
   for (let i = 0; i < newArr.length; i++) {
-    let depositAmount = parseInt(document.getElementById("deposit").value);
-    var value = newArr[i][3] + depositAmount;
-    alert(value);
-    newArr[i][3].pop();
-    newArr[i][3].push(value);
+    var value = deposit + newArr[i][3];
+    alert("your current balance is :" + value);
+    newArr[i][3] = value;
     localStorage.setItem("arr", JSON.stringify(newArr));
+    var myarr = localStorage.getItem("arr");
+    var arr = JSON.parse(myarr);
   }
 }
 function check() {
-  var myarr = localStorage.getItem("myarr");
-  var newArr = JSON.parse(myarr);
-  for (let i = 0; i < newArr.length; i++) {
-    alert("Balance is : " + newArr[i][3]);
+  var myarr = localStorage.getItem("arr");
+  var arr = JSON.parse(myarr);
+  for (let i = 0; i < arr.length; i++) {
+    alert("Balance is : " + arr[i][3]);
   }
 }
 // function updateData(){
