@@ -25,8 +25,10 @@ function getData() {
     for (let i = 0; i < newArr.length; i++) {
       if (newArr[i][0] === login && newArr[i][1] === pass) {
         alert("Password Matched");
+		window.location.href ="./dashboard.html";
       } else {
         alert("Password didn't Matched");
+		window.location.reload();
       }
     }
   }
