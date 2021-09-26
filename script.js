@@ -49,13 +49,14 @@ function withdraw() {
     }
   }
 }
-function deposit() {
+function save() {
   var myarr = localStorage.getItem("myarr");
   var newArr = JSON.parse(myarr);
-  var deposit = parseInt(document.getElementById("deposit").value);
   for (let i = 0; i < newArr.length; i++) {
-    var value = deposit + newArr[i][3];
-    alert("your current balance is :" + value);
+    alert("Your Previous Balance :" + newArr[i][3]);
+    var amount = parseInt(document.getElementById("value").value);
+    var value = amount + newArr[i][3];
+    alert("Current New balance is :" + value);
     newArr[i][3] = value;
     localStorage.setItem("arr", JSON.stringify(newArr));
     var myarr = localStorage.getItem("arr");
